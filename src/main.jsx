@@ -4,7 +4,6 @@ import './index.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import About from './Pages/About/About';
-import Services from './Pages/Services/Services';
 import ExploreCars from './Pages/ExploreCars/ExploreCars';
 import HelpCentre from './Pages/HelpCentre/HelpCentre';
 import Contact from './Pages/Contact/Contact';
