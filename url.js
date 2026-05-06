@@ -1,0 +1,1 @@
+export const app_url = import.meta.env.APP_URL

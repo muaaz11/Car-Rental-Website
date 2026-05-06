@@ -6,16 +6,14 @@ import { SlSettings } from "react-icons/sl";
 import { GoSignOut } from "react-icons/go";
 
 function DropDown({ isopen, setIsOpen }) {
-
-
   const dropdownRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
         isopen &&
-        dropdownRef.current && // Ensure ref is assigned
-        !dropdownRef.current.contains(event.target) // Check if click is outside dropdown
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
       ) {
         setIsOpen(false);
       }
@@ -26,8 +24,7 @@ function DropDown({ isopen, setIsOpen }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isopen]);
-  
-  
+
   return (
     <AnimatePresence>
       {isopen && (
@@ -41,28 +38,31 @@ function DropDown({ isopen, setIsOpen }) {
           <div className="flex flex-col gap-4">
             <div className="flex items-center cursor-pointer hover:text-[#39acf9]">
               <button className="text-gray-500 text-[14px] cursor-pointer flex items-center gap-3 ">
-              <AiOutlineUser className="text-gray-700 cursor-pointer text-[20px]" />
-              My Account</button>
+                <AiOutlineUser className="text-gray-700 cursor-pointer text-[20px]" />
+                My Account
+              </button>
             </div>
 
             <div className="flex items-center gap-2 cursor-pointer rounded">
               <button className="text-gray-500 cursor-pointer text-[14px] flex items-center gap-3">
-              <LuNotebookPen className="text-gray-700 cursor-pointer text-[20px]" />
-              Billing</button>
+                <LuNotebookPen className="text-gray-700 cursor-pointer text-[20px]" />
+                Billing
+              </button>
             </div>
 
             <div className="flex items-center gap-2 cursor-pointer rounded">
               <button className="text-gray-500 cursor-pointer text-[14px] flex items-center gap-3">
-              <SlSettings className="text-gray-700 cursor-pointer text-[20px]" />
-              Settings</button>
+                <SlSettings className="text-gray-700 cursor-pointer text-[20px]" />
+                Settings
+              </button>
             </div>
 
             <div className="flex items-center gap-2 cursor-pointer rounded">
               <button className="text-gray-500 cursor-pointer text-[14px] flex items-center gap-3">
-              <GoSignOut className="text-gray-700 cursor-pointer text-[20px]" />
-              Sign out</button>
+                <GoSignOut className="text-gray-700 cursor-pointer text-[20px]" />
+                Sign out
+              </button>
             </div>
-          
           </div>
         </motion.div>
       )}

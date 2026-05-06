@@ -14,6 +14,7 @@ import HelpCentre from "./Pages/HelpCentre/HelpCentre";
 import Contact from "./Pages/Contact/Contact";
 import Product from "./Pages/Product/Product";
 import Home from "./Pages/Home/Home";
+import LoginPage from "./Pages/Auth/login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route path="/HelpCentre" element={<HelpCentre />} />
       <Route path="/Contact" element={<Contact />} />
       <Route path="/Product/:id" element={<Product />} />
+      <Route path="/login" element={<LoginPage />} />
     </Route>,
   ),
 );
